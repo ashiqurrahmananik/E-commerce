@@ -23,21 +23,24 @@
 
 	<div class="sidenav" id="sidenav">
 		<ul class="navbar-nav">
+		   <li class="nav-item">
+				<a class="nav-link d" href="Home.php">Dashboard</a>
+			</li>
             <li class="nav-item">
-				<a class="nav-link" href="pending_orders.php">Pending Orders</a>
+				<a class="nav-link po" href="pending_orders.php">Pending Orders</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="admin.php">Add Product</a>
+				<a class="nav-link ap" href="admin.php">Add Product</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="event.php">All Product</a>
+				<a class="nav-link vp" href="event.php">All Product</a>
 			</li>
 			
 			<li class="nav-item">
-				<a class="nav-link" href="notice.php">All Orders</a>
+				<a class="nav-link ao" href="notice.php">All Orders</a>
 			</li>
             <li class="nav-item">
-                <a class="nav-link" href="gallery.php">Users</a>
+                <a class="nav-link u" href="gallery.php">Users</a>
             </li>
 		</ul>
 	</div>

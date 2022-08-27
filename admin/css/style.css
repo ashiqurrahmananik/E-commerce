@@ -46,3 +46,6 @@ p {
 .fixed-logo {
   width: 55px;
 }
+a.nav-link:hover {
+  color: yellow;
+}
