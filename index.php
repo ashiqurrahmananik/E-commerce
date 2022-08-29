@@ -109,11 +109,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
               </div>
@@ -126,11 +121,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
               </div>
@@ -143,11 +133,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
               </div>
@@ -160,11 +145,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
               </div>
@@ -182,11 +162,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
               </div>
@@ -199,11 +174,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
               </div>
@@ -216,11 +186,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
               </div>
@@ -233,11 +198,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
               </div>
@@ -255,11 +215,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
               </div>
@@ -272,11 +227,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
               </div>
@@ -289,11 +239,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
               </div>
@@ -306,11 +251,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
               </div>
@@ -328,11 +268,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
               </div>
@@ -345,11 +280,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
               </div>
@@ -362,10 +292,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
@@ -379,11 +305,6 @@
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star r-added text-warning"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
                 <h6>Arcu vitae imperdiet simply</h6> 
                 <span>$235.00</span>               
               </div>
