@@ -65,7 +65,9 @@
         </li>
       </ul>
       <form class="form-inline">
-        <a href=""><img src="img/search.png"></a>
+        <!--<a href=""><img src="img/search.png"></a>-->
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit" style="margin-left:7px;margin-right:7px;"><img src="img/search.png"></button>
         <a href="cart.php"><img src="img/cart.png"></a>
       </form>
     </div>
