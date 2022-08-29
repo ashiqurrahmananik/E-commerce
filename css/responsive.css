@@ -1,0 +1,101 @@
+@media only screen and (max-width: 992px) {
+	  .bt1
+	{
+		margin-top: 40px;
+		font-family: antonio;
+		font-size: 35px;
+		color: #A9765A;
+		text-transform: uppercase;
+		letter-spacing: 4px;
+	}
+	.bt2
+	{
+		font-family: antonio;
+		font-size: 50px;
+		color: #A9765A;
+		text-transform: uppercase;
+		line-height: 55px;
+		letter-spacing: 4px;
+		padding-bottom: 20px;
+	}
+	#banner-button
+	{
+		
+		padding: 5px 25px;
+		font-size: 14px;
+		margin-bottom: 40px;
+	}
+
+
+}
+@media only screen and (max-width: 550px) {
+	.bt4
+	{
+		font-size: 14px;
+	}
+
+}
+@media only screen and (max-width: 768px) {
+	.tab ul li a {
+		padding: 8px 17px;
+	
+		border: 1px solid black;
+
+	}
+	.tab ul li a:hover {
+		padding: 8px 17px;
+		
+		border: 1px solid red;
+		
+	}
+
+}
+@media only screen and (max-width: 538px) {
+	.tab ul li a {
+		padding: 4px 9px;
+		font-size: 12;
+	
+		border: 1px solid black;
+
+	}
+	.tab ul li a:hover {
+		padding: 4px 9px;
+		
+		border: 1px solid red;
+		
+	}
+
+}
+
+@media only screen and (max-width: 473px) {
+	.tab ul li a {
+		padding: 2px 5px;
+		font-size: 6;
+	
+		border: 1px solid black;
+
+	}
+	.tab ul li a:hover {
+		padding: 2px 5px;
+		
+		border: 1px solid red;
+		
+	}
+	.tab ul li 
+	{
+		display: inline;
+		padding-right: 10px;
+	}
+
+}
+
+@media only screen and (max-width: 991px) {
+	#footer-line
+	 {
+	 	display: block;
+	 	height: 1px;
+	 	width: 100%;
+
+	 }
+	
+}

@@ -14,6 +14,7 @@
 <body>
 
 <div class="container pendingbody">
+  <h5>Pending Orders</h5>
 <table class="table">
   <thead>
     <tr>
@@ -30,21 +31,33 @@
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td><img src="../img/1.jfif" style="width:50px;"></td>
+      <td>Mi Note 10</td>
+      <td>50</td>
+      <td>20,000</td>
+      <td>Anik</td>
+      <td>Cash On</td>
+      <td>Approve/Reject</td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <td><img src="../img/1.jfif" style="width:50px;"></td>
+      <td>Mi Note 10</td>
+      <td>50</td>
+      <td>20,000</td>
+      <td>Anik</td>
+      <td>Cash On</td>
+      <td>Approve/Reject</td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+      <td><img src="../img/1.jfif" style="width:50px;"></td>
+      <td>Mi Note 10</td>
+      <td>50</td>
+      <td>20,000</td>
+      <td>Anik</td>
+      <td>Cash On</td>
+      <td>Approve/Reject</td>
     </tr>
   </tbody>
 </table>

@@ -9,7 +9,7 @@ body {
 }
 .sidenav {
   height: 100%;
-  width: 250px;
+  width: 0px;
   background-color: #0e1a35;
   position: fixed;
   z-index: 1;
