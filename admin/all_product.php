@@ -1,5 +1,22 @@
 <?php
+SESSION_START();
+
+if(isset($_SESSION['auth']))
+{
+   if($_SESSION['auth']!=1)
+   {
+       header("location:login.php");
+   }
+}
+else
+{
+   header("location:login.php");
+}
  include'header.php';
+ include'lib/connection.php';
+
+ $sql = "SELECT * FROM product";
+ $result = $conn -> query ($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,36 +38,35 @@
       <th scope="col">#</th>
       <th scope="col">Image</th>
       <th scope="col">Name</th>
+      <th scope="col">Catagory</th>
+      <th scope="col">Description</th>
       <th scope="col">Quantity</th>
       <th scope="col">Price</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
+  <?php
+          if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+              ?>
     <tr>
       <th scope="row">1</th>
-      <td><img src="../img/1.jfif" style="width:50px;"></td>
-      <td>Mi Note 10</td>
-      <td>50</td>
-      <td>20,000</td>
-      <td>Update/Delete</td>
+      <td><img src="product_img/<?php echo $row['imgname']; ?>" style="width:50px;"></td>
+      <td><?php echo $row["name"] ?></td>
+      <td><?php echo $row["catagory"] ?></td>
+      <td><?php echo $row["description"] ?></td>
+      <td><?php echo $row["quantity"] ?></td>
+      <td><?php echo $row["Price"] ?></td>
+      <td>Delete/update</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td><img src="../img/1.jfif" style="width:50px;"></td>
-      <td>Mi Note 10</td>
-      <td>50</td>
-      <td>20,000</td>
-      <td>Update/Delete</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td><img src="../img/1.jfif" style="width:50px;"></td>
-      <td>Mi Note 10</td>
-      <td>50</td>
-      <td>20,000</td>
-      <td>Update/Delete</td>
-    </tr>
+    <?php 
+    }
+        } 
+        else 
+            echo "0 results";
+        ?>
   </tbody>
 </table>
 </div>

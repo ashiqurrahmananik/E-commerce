@@ -1,5 +1,9 @@
 <?php
  include'header.php';
+ include'lib/connection.php';
+
+ $sql = "SELECT * FROM product";
+ $result = $conn -> query ($sql);
 ?>
 
 
@@ -32,37 +36,6 @@
 
 <!--banner end-->
 
-<!--isotop start-->
-<section id=isotop>
-  <div class="container">
-    <div class="row grid-row">
-      <div class="col-md-4 grid-col">
-        <img src="img/1.png">
-      </div>
-      <div class="col-md-8 grid-col">
-        <img src="img/4.png">
-      </div>
-      <div class="col-md-4 grid-col">
-        <img src="img/2.png">
-      </div>
-      <div class="col-md-4 grid-col">
-        <img src="img/3.png">
-      </div>
-      <div class="col-md-4 grid-col">
-        <img src="img/5.png">
-      </div>
-      <div class="col-md-8 grid-col">
-        <img src="img/6.png">
-      </div>
-      <div class="col-md-4 grid-col">
-        <img src="img/7.png" style="margin-top: 12px;">
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!--isotop end-->
 
 <!---top sell start---->
 
@@ -72,24 +45,9 @@
       <div class="row">
         <div class="col-md-12 text-center">
           <img src="img/mark.png">
-          <h4>Top Products</h4>
+          <h4>New Products</h4>
           <p>A passage of Lorem Ipsum you need here</p>
-          <div class="tab">
-          <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active">
-                <a href="#home" aria-controls="home" role="tab" data-toggle="tab">LATEST</a>
-              </li>
-              <li role="presentation">
-                <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">BEST SELLER</a>
-              </li>
-              <li role="presentation">
-                <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">SPECIAL</a>
-              </li>
-              <li role="presentation">
-                <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">FEATURED</a>
-              </li>
-          </ul>
-        </div>
+
         </div>
         
         
@@ -98,242 +56,39 @@
     </div>
   </div>
   <div class="container">
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="home">
-          <div class="row">
+  <div class="row">
+  <?php
+          if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+              ?>
             <div class="col-md-3 col-sm-6 col-6">
               <div class="product-img">
-                <img src="img/g3.png" width="100%" class="img-fluid">
+                <img src="admin/product_img/<?php echo $row['imgname']; ?>" width="100%" class="img-fluid">
               </div>
               <div class="product-button">
                 <button>Add to cart</button>
               </div>
               <div class="details text-center">
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
+                <h6><?php echo $row["name"] ?></h6> 
+                <span><?php echo $row["Price"] ?></span>               
               </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-6">
-              <div class="product-img">
-                <img src="img/g1.png" width="100%" class="img-fluid">
-              </div>
-              <div class="product-button">
-                <button>Add to cart</button>
-              </div>
-              <div class="details text-center">
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6  col-6">
-              <div class="product-img">
-                <img src="img/g2.png" width="100%" class="img-fluid">
-              </div>
-              <div class="product-button">
-                <button>Add to cart</button>
-              </div>
-              <div class="details text-center">
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-              <div class="product-img">
-                <img src="img/g3.png" width="100%" class="img-fluid">
-              </div>
-              <div class="product-button">
-                <button>Add to cart</button>
-              </div>
-              <div class="details text-center">
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
-              </div>
-            </div>
+            <?php 
+    }
+        } 
+        else 
+            echo "0 results";
+        ?>
+
             
           </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="profile">
-          <div class="row">
-            <div class="col-md-3 col-sm-6 col-6">
-              <div class="product-img">
-                <img src="img/g2.png" width="100%" class="img-fluid">
-              </div>
-              <div class="product-button">
-                <button>Add to cart</button>
-              </div>
-              <div class="details text-center">
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-              <div class="product-img">
-                <img src="img/g3.png" width="100%" class="img-fluid">
-              </div>
-              <div class="product-button">
-                <button>Add to cart</button>
-              </div>
-              <div class="details text-center">
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-              <div class="product-img">
-                <img src="img/g1.png" width="100%" class="img-fluid">
-              </div>
-              <div class="product-button">
-                <button>Add to cart</button>
-              </div>
-              <div class="details text-center">
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-              <div class="product-img">
-                <img src="img/g2.png" width="100%" class="img-fluid">
-              </div>
-              <div class="product-button">
-                <button>Add to cart</button>
-              </div>
-              <div class="details text-center">
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
-              </div>
-            </div>
-            
-          </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="messages">
-          <div class="row">
-            <div class="col-md-3 col-sm-6 col-6">
-              <div class="product-img">
-                <img src="img/g2.png" width="100%" class="img-fluid">
-              </div>
-              <div class="product-button">
-                <button>Add to cart</button>
-              </div>
-              <div class="details text-center">
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-              <div class="product-img">
-                <img src="img/g3.png" width="100%" class="img-fluid">
-              </div>
-              <div class="product-button">
-                <button>Add to cart</button>
-              </div>
-              <div class="details text-center">
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-              <div class="product-img">
-                <img src="img/g2.png" width="100%" class="img-fluid">
-              </div>
-              <div class="product-button">
-                <button>Add to cart</button>
-              </div>
-              <div class="details text-center">
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-              <div class="product-img">
-                <img src="img/g1.png" width="100%" class="img-fluid">
-              </div>
-              <div class="product-button">
-                <button>Add to cart</button>
-              </div>
-              <div class="details text-center">
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
-              </div>
-            </div>
-            
-          </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="settings">
-          <div class="row">
-            <div class="col-md-3 col-sm-6 col-6">
-              <div class="product-img">
-                <img src="img/g1.png" width="100%" class="img-fluid">
-              </div>
-              <div class="product-button">
-                <button>Add to cart</button>
-              </div>
-              <div class="details text-center">
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-              <div class="product-img">
-                <img src="img/g3.png" width="100%"  class="img-fluid">
-              </div>
-              <div class="product-button">
-                <button>Add to cart</button>
-              </div>
-              <div class="details text-center">
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-              <div class="product-img">
-                <img src="img/g3.png"  width="100%"  class="img-fluid">
-              </div>
-              <div class="product-button">
-                <button>Add to cart</button>
-              </div>
-              <div class="details text-center">
-                <i class="fas fa-star"></i>
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-6">
-              <div class="product-img">
-                <img src="img/g1.png" width="100%"  class="img-fluid">
-              </div>
-              <div class="product-button">
-                <button>Add to cart</button>
-              </div>
-              <div class="details text-center">
-                <h6>Arcu vitae imperdiet simply</h6> 
-                <span>$235.00</span>               
-              </div>
-            </div>
-            
-          </div>
-        </div>
-    </div>
   </div>
 </section>
 
 
 <!---top sell end---->
 
-<!---arrow start--->
-
-<div class="arrow">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <img src="img/ar.png">
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<!---arrow end--->
 
 <!---logo start--->
 
