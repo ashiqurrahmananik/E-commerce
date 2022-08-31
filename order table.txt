@@ -1,0 +1,12 @@
+order table
+id
+userid
+username
+useraddress
+userphone
+productid
+productname
+productquantity
+totalproduct
+totalprice
+status

@@ -37,7 +37,13 @@
     
   </div>
 <!--header end--->
-
+<?php 
+  SESSION_START();
+  include "lib/connection.php";
+  $id=$_SESSION['userid'];
+ $sql = "SELECT * FROM cart where userid='$id'";
+ $result = $conn -> query ($sql);
+?>
 <!--nav start--->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
@@ -68,7 +74,36 @@
         <!--<a href=""><img src="img/search.png"></a>-->
         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-dark" type="submit" style="margin-left:7px;margin-right:7px;"><img src="img/search.png"></button>
-        <a href="cart.php"><img src="img/cart.png"></a>
+        <?php
+          $total=0;
+          if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+              $total++;
+            }
+          }
+              ?>
+        <a href="cart.php"><img src="img/cart.png"><?php echo $total?></a>
+        <?php 
+
+if(isset($_SESSION['auth']))
+{
+   if($_SESSION['auth']==1)
+   {
+    echo $_SESSION['username']; ?>
+    <a href="logout.php">(logout)</a>
+<?php
+   }
+}
+else
+{
+?>
+  <a href="login.php">Login</a>
+  <a href="Register.php">Signup</a>
+<?php
+}
+?>
+        
       </form>
     </div>
   </div>

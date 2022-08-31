@@ -28,9 +28,11 @@ include "lib/connection.php";
             while ($result=$loginres->fetch_assoc()) 
             {
                 $username=$result['f_name'];
+                $userid=$result['id'];
             }
 
             $_SESSION['username']=$username;
+            $_SESSION['userid']=$userid;
             $_SESSION['auth']=1;
             header("location:index.php");
         }
