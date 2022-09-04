@@ -52,7 +52,7 @@ $result = $conn -> query ($sql);
           if (mysqli_num_rows($result) > 0) {
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
-              if($row["status"]==0)
+              /*if($row["status"]==0)
               {
                 $k="pending";
               }
@@ -67,7 +67,7 @@ $result = $conn -> query ($sql);
               if($row["status"]==3)
               {
                 $k="delivered";
-              }
+              }*/
               ?>
     <tr>
 
@@ -78,7 +78,7 @@ $result = $conn -> query ($sql);
       <td><?php echo $row["txid"] ?></td>
       <td><?php echo $row["totalproduct"] ?></td>
       <td><?php echo $row["totalprice"] ?></td>
-      <td><?php echo $k ?></td>
+      <td><?php echo $row["status"] ?></td>
     </tr>
     <?php 
     }

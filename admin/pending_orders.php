@@ -46,7 +46,7 @@ if(isset($_GET['remove'])){
 
 <div class="container pendingbody">
   <h5>Order Status</h5>
-  <h5>0=pending, 1=confirm, 2=Delivery in progress, 3=Delivered, 4=cancel</h5>
+  <h5>pending, confirm, delivery in progress, delivered, cancel</h5>
 <table class="table">
   <thead>
     <tr>
@@ -78,7 +78,7 @@ if(isset($_GET['remove'])){
       <td><?php echo $row["totalprice"] ?></td>
       <td><form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <input type="hidden" name="update_id"  value="<?php echo  $row['id']; ?>" >
-        <input type="number" name="update_status" value="<?php echo $row['status']; ?>" >
+        <input type="text" name="update_status" value="<?php echo $row['status']; ?>" >
         <input type="submit" value="update" name="update_update_btn">
       </form></td>
       <td><a href="pending_orders.php?remove=<?php echo $row['id']; ?>">remove</a></td>

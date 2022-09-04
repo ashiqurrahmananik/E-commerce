@@ -22,7 +22,7 @@ if(isset($_POST['order_btn'])){
   $mobnumber = $_POST['mobnumber'];
   $txid = $_POST['txid'];
   /*$price_total = $_POST['total'];*/
-  $status=0;
+  $status="pending";
 
   $cart_query = mysqli_query($conn, "SELECT * FROM `cart` where userid='$userid'");
   $price_total = 0;
