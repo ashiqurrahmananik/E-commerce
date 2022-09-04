@@ -95,13 +95,13 @@ else
               ?>
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="col-md-3 col-sm-6 col-6">
-              <div class="product-img">
+              <div>
                 <img src="admin/product_img/<?php echo $row['imgname']; ?>" width="100%" class="img-fluid">
               </div>
-              <div class="product-button">
+              <div>
               <input type="submit" class="btn" value="add to cart" name="add_to_cart">
               </div>
-              <div class="details text-center">
+              <div>
                 <h6><?php echo $row["name"] ?></h6> 
                 <span><?php echo $row["Price"] ?></span> 
                 <input type="hidden" name="user_id" value="<?php echo $_SESSION['userid'];?>" >
@@ -216,100 +216,7 @@ else
 
 <!---welcome end--->
 
-<!---latest start--->
 
-<div class="latest">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h5>LATEST NEWS</h5>
-        <img src="img/mark.png">
-      </div>
-    </div>
-    <div class="row" id="l1">
-      <div class="col-lg-4 col-md-6">
-        <div class="row">
-          <div class="col-md-4 col-4 col-sm-3">
-            <img src="img/let1.png" class="img-fluid">
-          </div>
-          <div class="col-md-8 col-8 col-sm-9">
-            <h6 class="lh">Excepteur sint occaecat<br>cupidatat</h6>
-            <p class="lp">03/08/2016  /  Read More</p>
-          </div>   
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6">
-        <div class="row">
-          <div class="col-md-4 col-4 col-sm-3">
-            <img src="img/let2.png" class="img-fluid">
-          </div>
-          <div class="col-md-8 col-8 col-sm-9">
-            <h6 class="lh">Excepteur sint occaecat<br>cupidatat</h6>
-            <p class="lp">03/08/2016  /  Read More</p>
-          </div>   
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6">
-        <div class="row">
-          <div class="col-md-4 col-4 col-sm-3">
-            <img src="img/let3.png" class="img-fluid">
-          </div>
-          <div class="col-md-8 col-8 col-sm-9">
-            <h6 class="lh">Excepteur sint occaecat<br>cupidatat</h6>
-            <p class="lp">03/08/2016  /  Read More</p>
-          </div>   
-        </div>
-      </div>
-
-    </div>
-
-
-  <div class="row" id="l2">
-      <div class="col-lg-4 col-md-6">
-        <div class="row">
-          <div class="col-md-4 col-4 col-sm-3">
-            <img src="img/let3.png" class="img-fluid">
-          </div>
-          <div class="col-md-8 col-8 col-sm-9">
-            <h6 class="lh">Excepteur sint occaecat<br>cupidatat</h6>
-            <p class="lp">03/08/2016  /  Read More</p>
-          </div>   
-        </div>
-      </div>
-
-     <div class="col-lg-4 col-md-6">
-        <div class="row">
-          <div class="col-md-4 col-4 col-sm-3">
-            <img src="img/let2.png" class="img-fluid">
-          </div>
-          <div class="col-md-8 col-8 col-sm-9">
-            <h6 class="lh">Excepteur sint occaecat<br>cupidatat</h6>
-            <p class="lp">03/08/2016  /  Read More</p>
-          </div>   
-        </div>
-      </div>
-    
-      <div class="col-lg-4 col-md-6">
-        <div class="row">
-          <div class="col-md-4 col-4 col-sm-3">
-            <img src="img/let1.png" class="img-fluid">
-          </div>
-          <div class="col-md-8 col-8 col-sm-9">
-            <h6 class="lh">Excepteur sint occaecat<br>cupidatat</h6>
-            <p class="lp">03/08/2016  /  Read More</p>
-          </div>   
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</div>
-
-
-<!---latest end--->
 
 <?php
  include'footer.php';

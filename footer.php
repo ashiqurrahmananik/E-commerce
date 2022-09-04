@@ -1,30 +1,4 @@
-<!---subscribe start--->
 
-<div class="subscribe">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-5 kham">
-        <img src="img/kham.png" class="subs-img">
-        <span class="subs-header">Sign up here for Early Updates</span>
-      </div>
-      <div class="col-md-7">
-        <div class="input-group mb-3 fm">
-            <input type="text" class="form-control" placeholder="Enter your email address ..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button type="button" id="subs-btn">subscribe</button>
-            </div>
-        </div>
-      </div>
-      
-    </div>
-    
-  </div>
-  
-</div>
-
-
-
-<!---subscribe end--->
 
 
 <!---footer start--->

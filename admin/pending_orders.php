@@ -13,6 +13,24 @@ else
 {
    header("location:login.php");
 }
+include'lib/connection.php';
+$sql = "SELECT * FROM orders where status='0'";
+$result = $conn -> query ($sql);
+
+if(isset($_POST['update_update_btn'])){
+  $update_value = $_POST['update_status'];
+  $update_id = $_POST['update_id'];
+  $update_quantity_query = mysqli_query($conn, "UPDATE `orders` SET status = '$update_value' WHERE id = '$update_id'");
+  if($update_quantity_query){
+     header('location:pending_orders.php');
+  };
+};
+
+if(isset($_GET['remove'])){
+  $remove_id = $_GET['remove'];
+  mysqli_query($conn, "DELETE FROM `orders` WHERE id = '$remove_id'");
+  header('location:pending_orders.php');
+};
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,47 +49,46 @@ else
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Image</th>
+
       <th scope="col">Name</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Price</th>
-      <th scope="col">Customer Name</th>
-      <th scope="col">Payment</th>
-      <th scope="col">Action</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Send Money Number</th>
+      <th scope="col">Txid</th>
+      <th scope="col">Total Product</th>
+      <th scope="col">Total Price</th>
+      <th scope="col">Status</th>
     </tr>
   </thead>
   <tbody>
+  <?php
+          if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+              ?>
     <tr>
-      <th scope="row">1</th>
-      <td><img src="../img/1.jfif" style="width:50px;"></td>
-      <td>Mi Note 10</td>
-      <td>50</td>
-      <td>20,000</td>
-      <td>Anik</td>
-      <td>Cash On</td>
-      <td>Approve/Reject</td>
+
+      <td><?php echo $row["name"] ?></td>
+      <td><?php echo $row["address"] ?></td>
+      <td><?php echo $row["phone"] ?></td>
+      <td><?php echo $row["mobnumber"] ?></td>
+      <td><?php echo $row["txid"] ?></td>
+      <td><?php echo $row["totalproduct"] ?></td>
+      <td><?php echo $row["totalprice"] ?></td>
+      <td><form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <input type="hidden" name="update_id"  value="<?php echo  $row['id']; ?>" >
+        <input type="number" name="update_status" value="<?php echo $row['status']; ?>" >
+        <input type="submit" value="update" name="update_update_btn">
+      </form></td>
+      <td><a href="pending_orders.php?remove=<?php echo $row['id']; ?>">remove</a></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td><img src="../img/1.jfif" style="width:50px;"></td>
-      <td>Mi Note 10</td>
-      <td>50</td>
-      <td>20,000</td>
-      <td>Anik</td>
-      <td>Cash On</td>
-      <td>Approve/Reject</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td><img src="../img/1.jfif" style="width:50px;"></td>
-      <td>Mi Note 10</td>
-      <td>50</td>
-      <td>20,000</td>
-      <td>Anik</td>
-      <td>Cash On</td>
-      <td>Approve/Reject</td>
-    </tr>
+    <?php 
+    }
+        } 
+        else 
+            echo "0 results";
+        ?>
+        
   </tbody>
 </table>
 </div>

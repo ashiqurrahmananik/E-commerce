@@ -1,6 +1,6 @@
 <?php
  include'header.php';
- SESSION_START();
+
 
 if(isset($_SESSION['auth']))
 {
@@ -14,7 +14,8 @@ else
    header("location:login.php");
 }
 include'lib/connection.php';
-$sql = "SELECT * FROM orders where status='1'";
+$k=$_SESSION['userid'];
+$sql = "SELECT * FROM orders where userid='$k'";
 $result = $conn -> query ($sql);
 ?>
 <!DOCTYPE html>
@@ -74,3 +75,7 @@ $result = $conn -> query ($sql);
     
 </body>
 </html>
+
+<?php
+ include'footer.php';
+?>

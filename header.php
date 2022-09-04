@@ -91,6 +91,7 @@ if(isset($_SESSION['auth']))
    if($_SESSION['auth']==1)
    {
     echo $_SESSION['username']; ?>
+    <a href="profile.php">(profile)</a>
     <a href="logout.php">(logout)</a>
 <?php
    }

@@ -1,6 +1,5 @@
 <?php
- include'header.php';
- SESSION_START();
+SESSION_START();
 
 if(isset($_SESSION['auth']))
 {
@@ -13,6 +12,11 @@ else
 {
    header("location:login.php");
 }
+ include'header.php';
+ include'lib/connection.php';
+
+ $sql = "SELECT * FROM users";
+ $result = $conn -> query ($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,25 +31,34 @@ else
 <body>
 
 <div class="container pendingbody">
-  <h5>Pending Orders</h5>
+  <h5>All Users</h5>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
+      <th scope="col">Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
       <th scope="col">Email</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Address</th>
     </tr>
   </thead>
   <tbody>
+  <?php
+          if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+              ?>
     <tr>
-      <th scope="row">1</th>
-      <td>Ashiqur Rahman Anik</td>
-      <td>ashiqur.anik25@gmail.com</td>
-      <td>+8801554518935</td>
-      <td>Dhaka</td>
+      <td><?php echo $row["id"] ?></td>
+      <td><?php echo $row["f_name"] ?></td>
+      <td><?php echo $row["l_name"] ?></td>
+      <td><?php echo $row["email"] ?></td>
     </tr>
+    <?php 
+    }
+        } 
+        else 
+            echo "0 results";
+        ?>
   </tbody>
 </table>
 </div>
