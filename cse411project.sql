@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 04, 2022 at 07:18 PM
+-- Generation Time: Sep 04, 2022 at 08:45 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -81,7 +81,7 @@ CREATE TABLE `orders` (
   `txid` varchar(100) NOT NULL,
   `totalproduct` varchar(100) NOT NULL,
   `totalprice` int(100) NOT NULL,
-  `status` int(100) NOT NULL,
+  `status` varchar(100) DEFAULT NULL,
   `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -90,7 +90,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `userid`, `name`, `address`, `phone`, `mobnumber`, `txid`, `totalproduct`, `totalprice`, `status`, `created_at`) VALUES
-(1, 3, 'ashiqur', 'barisal', 1554518935, 1554518935, '01', '13 (1) ', 400, 3, '2022-09-04 15:41:18.885429');
+(4, 3, 'ashiqur', 'dhaka', 5655, 5996, 'asd415adf4', '13 (1) ', 400, 'cancel', '2022-09-04 18:18:17.725537');
 
 -- --------------------------------------------------------
 
@@ -113,8 +113,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `catagory`, `description`, `quantity`, `Price`, `imgname`) VALUES
-(12, 'Tshirt', 'clothing', 'good', 38, 350, 'g3.png'),
-(13, 'Shirt', 'clothing', 'good', 44, 400, 'g2.png'),
+(12, 'Tshirt', 'clothing', 'good', 33, 350, 'g3.png'),
+(13, 'Shirt', 'clothing', 'good', 43, 400, 'g2.png'),
 (14, 'New Shirt', 'clothing', 'good', 64, 600, 'g1.png');
 
 -- --------------------------------------------------------
@@ -189,13 +189,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product`
