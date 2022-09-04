@@ -104,7 +104,7 @@ else
               <div class="details text-center">
                 <h6><?php echo $row["name"] ?></h6> 
                 <span><?php echo $row["Price"] ?></span> 
-                <input type="hidden" name="user_id" value="<?php echo $_SESSION['userid']; ?>"> 
+                <input type="hidden" name="user_id" value="<?php echo $_SESSION['userid'];?>" >
                 <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>"> 
                 <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
                 <input type="hidden" name="product_price" value="<?php echo $row['Price']; ?>">              

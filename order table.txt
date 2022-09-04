@@ -1,12 +1,11 @@
 order table
 id
-userid
-username
-useraddress
-userphone
-productid
-productname
-productquantity
-totalproduct
-totalprice
-status
+userid -> int
+name -> varchar
+address -> varchar
+phone -> int
+mobnumber -> int
+txid -> varchar
+totalproduct -> varchar
+totalprice -> int
+status -> varchar
