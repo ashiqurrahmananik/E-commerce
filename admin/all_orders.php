@@ -14,7 +14,7 @@ else
    header("location:login.php");
 }
 include'lib/connection.php';
-$sql = "SELECT * FROM orders where status='1'";
+$sql = "SELECT * FROM orders where status='delivered'";
 $result = $conn -> query ($sql);
 ?>
 <!DOCTYPE html>
