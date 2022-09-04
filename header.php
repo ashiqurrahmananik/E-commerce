@@ -59,10 +59,6 @@
         <li class="nav-item">
           <a class="nav-link" href="Clothing.php"> Clothing</a>
         </li>
-       
-        <li class="nav-item">
-          <a class="nav-link" href="Shoes.php">Shoes</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="Trends.php">Trends</a>
         </li>

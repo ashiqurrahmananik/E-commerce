@@ -1,3 +1,10 @@
+<?php
+include'lib/connection.php';
+$sql = "SELECT * FROM orders where status='0'";
+$result = $conn -> query ($sql);
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +25,21 @@
 	<section class="header" id="header">
 		<i class="fas fa-bars fixed" onclick="openside()"></i>
 		<div class="line-fixed">Admin Panel</div>
+		<?php
+		$c=0;
+          if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+				$c=$c+1;
+			}
+		}
+              ?>
+		<span>(New Orders)</span>
+		<span style="    border-radius: 20px;
+    
+    background-color: red;
+    color: white;
+    padding: 5px;"><?php echo $c ;?></span>
 		<a href="logout.php">(logout)</a>
 	</section>
 

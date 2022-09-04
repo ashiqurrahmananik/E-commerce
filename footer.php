@@ -9,9 +9,9 @@
     <div class="row">
       <div class="col-lg-4 text-center">
         <img src="img/logo.png" class="footer-img">
-        <p>507-Union Trade Center, Surat<br>
-        Call us: 0123-456-789<br>
-        support@templatemela.com</p>
+        <p>Lorem ipsum dolor sit amet <br>
+       consectetur adipiscing elit.<br>
+       Lorem ipsum dolor sit amet</p>
         <img src="img/social.png">
         
       </div>
@@ -69,7 +69,7 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <p>Site Map  Search Terms  Advanced Search Orders and Returns  Contact Us</p>
-        <p>© 2016 FashionStore. All Rights Reserved.</p>
+        <p>© 2022 FashionStore. All Rights Reserved.</p>
         <img src="img/pay.png" class="img-fluid">
       </div>
     </div>

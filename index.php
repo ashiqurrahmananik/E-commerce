@@ -99,8 +99,6 @@ else
                 <img src="admin/product_img/<?php echo $row['imgname']; ?>" >
               </div>
               <div>
-              <input type="submit" class="btn" value="add to cart" name="add_to_cart">
-              </div>
               <div>
                 <h6><?php echo $row["name"] ?></h6> 
                 <span><?php echo $row["Price"] ?></span> 
@@ -109,6 +107,9 @@ else
                 <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
                 <input type="hidden" name="product_price" value="<?php echo $row['Price']; ?>">              
               </div>
+              <input type="submit" class="btn btn btn-primary" value="add to cart" name="add_to_cart">
+              </div>
+              
             </div>
             </form>
             <?php 

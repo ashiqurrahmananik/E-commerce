@@ -17,6 +17,9 @@ include'lib/connection.php';
 $sql = "SELECT * FROM orders where status='1'";
 $result = $conn -> query ($sql);
 $t=0;
+$sql = "SELECT * FROM product";
+$result1 = $conn -> query ($sql);
+$tp=0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +45,16 @@ $t=0;
             }
         }
         echo "total=" . $t ." Taka";
+              ?>
+
+<?php
+          if (mysqli_num_rows($result1) > 0) {
+            // output data of each row
+            while($row1 = mysqli_fetch_assoc($result1)) {
+                $tp=$tp+1;
+            }
+        }
+        echo "/total product=" . $tp;
               ?>
                 
 
