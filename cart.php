@@ -44,15 +44,12 @@ if(isset($_POST['order_btn'])){
                 $update_id=$row['id'];
                 $t=$row['quantity']-$product_item['quantity'];
                 $update_quantity_query = mysqli_query($conn, "UPDATE `product` SET quantity = '$t' WHERE id = '$update_id'");
-                $total_product = implode(', ',$product_name);
+                
 
- 
+                $flag=1;
 
 
-                $detail_query = mysqli_query($conn, "INSERT INTO `orders`(userid, name, address, phone,  mobnumber, txid, totalproduct, totalprice, status) VALUES('$userid','$name','$address','$number','$mobnumber','$txid','$total_product','$price_total','$status')") or die($conn -> error);
-              
-                $cart_query1 = mysqli_query($conn, "delete FROM `cart` where userid='$userid'");
-                header("location:index.php");
+                
 
               }
               else
@@ -61,8 +58,19 @@ if(isset($_POST['order_btn'])){
               }
             }
           }
+
         }
+
      };
+     if($flag==1)
+     {
+       $total_product = implode(', ',$product_name);
+       $detail_query = mysqli_query($conn, "INSERT INTO `orders`(userid, name, address, phone,  mobnumber, txid, totalproduct, totalprice, status) VALUES('$userid','$name','$address','$number','$mobnumber','$txid','$total_product','$price_total','$status')") or die($conn -> error);
+           
+             $cart_query1 = mysqli_query($conn, "delete FROM `cart` where userid='$userid'");
+             header("location:index.php");
+
+     }
   };
 
 
