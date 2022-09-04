@@ -1,21 +1,23 @@
 <?php
  include'header.php';
-
-SESSION_START();
+ SESSION_START();
 
 if(isset($_SESSION['auth']))
 {
-    if($_SESSION['auth']!=1)
-    {
-        header("location:login.php");
-    }
+   if($_SESSION['auth']!=1)
+   {
+       header("location:login.php");
+   }
 }
 else
 {
-    header("location:login.php");
+   header("location:login.php");
 }
+include'lib/connection.php';
+$sql = "SELECT * FROM orders where status='1'";
+$result = $conn -> query ($sql);
+$t=0;
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,10 +29,22 @@ else
 
 </head>
 <body>
+    
     <div class="container homebody">
         <div class="row">
             <div class="col-md-12">
                 <h1>Walcome To The Admin Panel</h1>
+                <?php
+          if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+                $t=$t+$row["totalprice"];
+            }
+        }
+        echo "total=" . $t ." Taka";
+              ?>
+                
+
             </div>
         </div>
     </div>

@@ -1,28 +1,9 @@
 <?php
-SESSION_START();
-
-if(isset($_SESSION['auth']))
-{
-   if($_SESSION['auth']!=1)
-   {
-       header("location:login.php");
-   }
-}
-else
-{
-   header("location:login.php");
-}
  include'header.php';
  include'lib/connection.php';
-
- $sql = "SELECT * FROM product";
+ $name=$_POST['name'];
+ $sql = "SELECT * FROM product where name='$name'";
  $result = $conn -> query ($sql);
-
- if(isset($_GET['remove'])){
-  $remove_id = $_GET['remove'];
-  mysqli_query($conn, "DELETE FROM `product` WHERE id = '$remove_id'");
-  header('location:all_product.php');
-};
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,18 +18,16 @@ else
 <body>
 
 <div class="container pendingbody">
-  <h5>All Product</h5>
+  <h5>Search Result</h5>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Image</th>
       <th scope="col">Name</th>
       <th scope="col">Catagory</th>
       <th scope="col">Description</th>
       <th scope="col">Quantity</th>
       <th scope="col">Price</th>
-      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -58,14 +37,12 @@ else
             while($row = mysqli_fetch_assoc($result)) {
               ?>
     <tr>
-      <th scope="row">1</th>
-      <td><img src="product_img/<?php echo $row['imgname']; ?>" style="width:50px;"></td>
+      <td><img src="admin/product_img/<?php echo $row['imgname']; ?>" style="width:50px;"></td>
       <td><?php echo $row["name"] ?></td>
       <td><?php echo $row["catagory"] ?></td>
       <td><?php echo $row["description"] ?></td>
       <td><?php echo $row["quantity"] ?></td>
       <td><?php echo $row["Price"] ?></td>
-      <td><a href="all_product.php?remove=<?php echo $row['id']; ?>">remove</a></td>
     </tr>
     <?php 
     }

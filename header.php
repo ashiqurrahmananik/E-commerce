@@ -64,16 +64,14 @@
           <a class="nav-link" href="Shoes.php">Shoes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Accessories.php"> Accessories</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="Trends.php">Trends</a>
         </li>
       </ul>
-      <form class="form-inline">
+      <form class="form-inline"  action="search.php" method="post">
         <!--<a href=""><img src="img/search.png"></a>-->
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="name">
         <button class="btn btn-outline-dark" type="submit" style="margin-left:7px;margin-right:7px;"><img src="img/search.png"></button>
+        </form>
         <?php
           $total=0;
           if (mysqli_num_rows($result) > 0) {
@@ -91,7 +89,7 @@ if(isset($_SESSION['auth']))
    if($_SESSION['auth']==1)
    {
     echo $_SESSION['username']; ?>
-    <a href="profile.php">(profile)</a>
+    <a href="profile.php">(My Orders)</a>
     <a href="logout.php">(logout)</a>
 <?php
    }
@@ -105,7 +103,7 @@ else
 }
 ?>
         
-      </form>
+
     </div>
   </div>
 </nav>

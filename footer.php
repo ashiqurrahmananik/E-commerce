@@ -7,7 +7,7 @@
 <div class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 text-center">
+      <div class="col-lg-4 text-center">
         <img src="img/logo.png" class="footer-img">
         <p>507-Union Trade Center, Surat<br>
         Call us: 0123-456-789<br>
@@ -19,42 +19,30 @@
       <div class="col-lg-3 text-center">
         
         <h5 class="footer-header">my account</h5>
-        <p>Ask In forum<br>
-        Help Desk<br>
-        Payment Method<br>
-        Promotions<br>
-        Terms & Condition<br>
-        Payment Method<br>
-        Shipping Policy</p>
+        <p>Lorem ipsum<br>
+        Lorem ipsum<br>
+        Lorem ipsum<br>
+        Lorem ipsum<br>
+        Lorem ipsum<br>
+        Lorem ipsum<br>
+        Lorem ipsum</p>
         
       </div>
        <span  id="footer-line"></span>
-      <div class="col-lg-3 text-center">
+      <div class="col-lg-4 text-center">
 
        <h5 class="footer-header">Shop</h5>
 
-      <p>Accessories<br>
-        Balcony Tables<br>
-        Bar Units<br>
-        Fine Art<br>
-        Beds<br>
-        Rules</p>
+      <p>Lorem ipsum<br>
+      Lorem ipsum<br>
+      Lorem ipsum<br>
+      Lorem ipsum<br>
+      Lorem ipsum<br>
+      Lorem ipsum</p>
         
         
       </div>
-        <span  id="footer-line"></span>
-      <div class="col-lg-2 text-center">
-        <h5 class="footer-header">sellers</h5>
-       
-        <p>Seller Login<br>
-          Seller Signup<br>
-          Seller Handbook<br>
-          Shipping & Refund<br>
-          Wholesale Policy</p>
 
-       
-        
-      </div>
       
     </div>
   </div>

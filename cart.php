@@ -31,14 +31,41 @@ if(isset($_POST['order_btn'])){
         $product_name[] = $product_item['productid'] .' ('. $product_item['quantity'] .') ';
         $product_price = number_format($product_item['price'] * $product_item['quantity']);
         $price_total += $product_price;
+        $sql = "SELECT * FROM product";
+        $result = $conn -> query ($sql);
+      
+        if (mysqli_num_rows($result) > 0) {
+          // output data of each row
+          while($row = mysqli_fetch_assoc($result)) {
+            if($row['id']===$product_item['productid'])
+            {
+              if($product_item['quantity']<=$row['quantity'])
+              {
+                $update_id=$row['id'];
+                $t=$row['quantity']-$product_item['quantity'];
+                $update_quantity_query = mysqli_query($conn, "UPDATE `product` SET quantity = '$t' WHERE id = '$update_id'");
+                $total_product = implode(', ',$product_name);
+
+ 
+
+
+                $detail_query = mysqli_query($conn, "INSERT INTO `orders`(userid, name, address, phone,  mobnumber, txid, totalproduct, totalprice, status) VALUES('$userid','$name','$address','$number','$mobnumber','$txid','$total_product','$price_total','$status')") or die($conn -> error);
+              
+                $cart_query1 = mysqli_query($conn, "delete FROM `cart` where userid='$userid'");
+                header("location:index.php");
+
+              }
+              else
+              {
+                echo "out of stock " .$row['name']." Quantity:".$row['quantity'];
+              }
+            }
+          }
+        }
      };
   };
 
-  $total_product = implode(', ',$product_name);
-  $detail_query = mysqli_query($conn, "INSERT INTO `orders`(userid, name, address, phone,  mobnumber, txid, totalproduct, totalprice, status) VALUES('$userid','$name','$address','$number','$mobnumber','$txid','$total_product','$price_total','$status')") or die($conn -> error);
 
-  $cart_query1 = mysqli_query($conn, "delete FROM `cart` where userid='$userid'");
-  header("location:index.php");
 
 }
 
