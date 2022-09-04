@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 04, 2022 at 09:02 AM
+-- Generation Time: Sep 04, 2022 at 07:18 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -63,8 +63,7 @@ INSERT INTO `cart` (`id`, `userid`, `productid`, `name`, `quantity`, `price`) VA
 (10, 0, 12, 'T-shirt', 1, 350),
 (13, 0, 14, 'New Shirt', 1, 600),
 (16, 0, 15, 'mi note 8', 1, 20000),
-(24, 4, 12, 'T-shirt', 1, 350),
-(31, 3, 12, 'T-shirt', 1, 350);
+(24, 4, 12, 'T-shirt', 1, 350);
 
 -- --------------------------------------------------------
 
@@ -82,27 +81,16 @@ CREATE TABLE `orders` (
   `txid` varchar(100) NOT NULL,
   `totalproduct` varchar(100) NOT NULL,
   `totalprice` int(100) NOT NULL,
-  `status` int(100) NOT NULL
+  `status` int(100) NOT NULL,
+  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `userid`, `name`, `address`, `phone`, `mobnumber`, `txid`, `totalproduct`, `totalprice`, `status`) VALUES
-(1, 3, 'ashiqur', 'dhaka', 1, 2, '3', '15 (2) ', 40000, 1),
-(8, 3, 'ashiqur', 'dhaka', 656, 666, 'dsf645fe', '15 (3) ', 0, 0),
-(9, 3, 'ashiqur', 'dhaka', 565, 666, '666', '15 (3) ', 0, 0),
-(10, 3, 'ashiqur', 'dhaka', 55, 66, '+9+9', '12 (1) ', 0, 0),
-(11, 2, 'Ami', 'dhaka', 545, 5, 'a', '12 (5) ', 0, 0),
-(12, 2, 'Ami', 'dhaka', 5, 6, 'a', '12 (5) ', 0, 0),
-(13, 2, 'Ami', 'dhaka', 5, 6, 'a', '12 (5) ', 1, 0),
-(14, 2, 'Ami', 'd', 9, 6, 'as', '12 (5) ', 1, 0),
-(15, 2, 'Ami', 'dhaka', 6, 9, '3', '12 (1) ', 1, 0),
-(16, 2, 'Ami', 's', 9, 6, 'as', '12 (1) ', 350, 0),
-(17, 2, 'Ami', 's', 9, 6, 'as', '12 (1) ', 350, 0),
-(18, 2, 'Ami', 'bd', 6, 9, 'asd415adf4', '13 (1) , 14 (1) ', 1000, 0),
-(19, 2, 'Ami', 'ctg', 155, 155, '400a', '13 (1) ', 400, 0);
+INSERT INTO `orders` (`id`, `userid`, `name`, `address`, `phone`, `mobnumber`, `txid`, `totalproduct`, `totalprice`, `status`, `created_at`) VALUES
+(1, 3, 'ashiqur', 'barisal', 1554518935, 1554518935, '01', '13 (1) ', 400, 3, '2022-09-04 15:41:18.885429');
 
 -- --------------------------------------------------------
 
@@ -125,10 +113,9 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `catagory`, `description`, `quantity`, `Price`, `imgname`) VALUES
-(12, 'T-shirt', 'clothing', 'good', 50, 350, 'g3.png'),
-(13, 'Shirt', 'clothing', 'good', 50, 400, 'g2.png'),
-(14, 'New Shirt', 'clothing', 'good', 66, 600, 'g1.png'),
-(15, 'mi note 8', 'mob', 'good', 52, 20000, '1.jfif');
+(12, 'Tshirt', 'clothing', 'good', 38, 350, 'g3.png'),
+(13, 'Shirt', 'clothing', 'good', 44, 400, 'g2.png'),
+(14, 'New Shirt', 'clothing', 'good', 64, 600, 'g1.png');
 
 -- --------------------------------------------------------
 
@@ -202,19 +189,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -36,7 +36,7 @@ $tp=0;
     <div class="container homebody">
         <div class="row">
             <div class="col-md-12">
-                <h1>Walcome To The Admin Panel</h1>
+                <h1>Welcome To The Admin Panel</h1>
                 <?php
           if (mysqli_num_rows($result) > 0) {
             // output data of each row

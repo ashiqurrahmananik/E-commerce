@@ -14,7 +14,7 @@ else
    header("location:login.php");
 }
 include'lib/connection.php';
-$sql = "SELECT * FROM orders where status='0'";
+$sql = "SELECT * FROM orders";
 $result = $conn -> query ($sql);
 
 if(isset($_POST['update_update_btn'])){
@@ -45,7 +45,8 @@ if(isset($_GET['remove'])){
 <body>
 
 <div class="container pendingbody">
-  <h5>Pending Orders</h5>
+  <h5>Order Status</h5>
+  <h5>0=pending, 1=confirm, 2=Delivery in progress, 3=Delivered, 4=cancel</h5>
 <table class="table">
   <thead>
     <tr>

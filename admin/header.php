@@ -49,7 +49,7 @@ $result = $conn -> query ($sql);
 				<a class="nav-link d" href="Home.php">Dashboard</a>
 			</li>
             <li class="nav-item">
-				<a class="nav-link po" href="pending_orders.php">Pending Orders</a>
+				<a class="nav-link po" href="pending_orders.php">Order Status</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link ap" href="add_product.php">Add Product</a>
@@ -59,10 +59,13 @@ $result = $conn -> query ($sql);
 			</li>
 			
 			<li class="nav-item">
-				<a class="nav-link ao" href="all_orders.php">All Order</a>
+				<a class="nav-link ao" href="all_orders.php">Delivered Order</a>
 			</li>
             <li class="nav-item">
                 <a class="nav-link u" href="users.php">Users</a>
+            </li>
+			<li class="nav-item">
+                <a class="nav-link u" href="report.php">Report</a>
             </li>
 		</ul>
 	</div>
