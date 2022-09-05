@@ -63,7 +63,7 @@
           <a class="nav-link" href="Trends.php">Trends</a>
         </li>
       </ul>
-      <form class="form-inline"  action="search.php" method="post">
+      <form class="form-inline"  action="search(1).php" method="post">
         <!--<a href=""><img src="img/search.png"></a>-->
         <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="name">
         <button class="btn btn-outline-dark" type="submit" style="margin-left:7px;margin-right:7px;"><img src="img/search.png"></button>
@@ -77,7 +77,7 @@
             }
           }
               ?>
-        <a href="cart.php"><img src="img/cart.png"><?php echo $total?></a>
+        <a href="cart(1).php"><img src="img/cart.png"><?php echo $total?></a>
         <?php 
 
 if(isset($_SESSION['auth']))

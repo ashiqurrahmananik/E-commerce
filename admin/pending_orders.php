@@ -66,6 +66,7 @@ if(isset($_GET['remove'])){
           if (mysqli_num_rows($result) > 0) {
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
+              
               ?>
     <tr>
 
@@ -78,7 +79,15 @@ if(isset($_GET['remove'])){
       <td><?php echo $row["totalprice"] ?></td>
       <td><form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <input type="hidden" name="update_id"  value="<?php echo  $row['id']; ?>" >
-        <input type="text" name="update_status" value="<?php echo $row['status']; ?>" >
+        <div>
+                                <select name="update_status" class="form-control">
+                                <option><?php echo $row['status']; ?></option>
+                                    <option value="Pending">Pending</option>
+                                    <option value="Confirmed">Confirmed</option>
+                                  <option value="Cancel">Cancel</option>
+                                  <option value="Delivered">Delivered</option>
+                                </select>
+                            </div>
         <input type="submit" value="update" name="update_update_btn">
       </form></td>
       <td><a href="pending_orders.php?remove=<?php echo $row['id']; ?>">remove</a></td>

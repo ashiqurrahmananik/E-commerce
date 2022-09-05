@@ -69,6 +69,9 @@ $result = $conn -> query ($sql);
             </li>
 		</ul>
 	</div>
+	<?php
+
+?>
 <!--js link-->
 <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
