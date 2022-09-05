@@ -28,9 +28,11 @@ else
 
   if(mysqli_num_rows($select_cart) > 0){
     echo $message[] = 'product already added to cart';
+
   }else{
      $insert_product = mysqli_query($conn, "INSERT INTO `cart`(userid, productid, name, quantity, price) VALUES('$user_id', '$product_id', '$product_name', '$product_quantity', '$product_price')");
    echo $message[] = 'product added to cart succesfully';
+   header('location:index.php');
   }
 
 }

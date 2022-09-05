@@ -1,6 +1,6 @@
 <?php
 include'lib/connection.php';
-$sql = "SELECT * FROM orders where status='0'";
+$sql = "SELECT * FROM orders where status='pending'";
 $result = $conn -> query ($sql);
 
 ?>

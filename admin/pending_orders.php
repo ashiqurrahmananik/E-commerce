@@ -46,7 +46,6 @@ if(isset($_GET['remove'])){
 
 <div class="container pendingbody">
   <h5>Order Status</h5>
-  <h5>pending, confirm, delivery in progress, delivered, cancel</h5>
 <table class="table">
   <thead>
     <tr>
