@@ -11,7 +11,6 @@
 ## Credential for admin panel :
 - username: admin
 - Password: admin
-<br>
 ## User Requirements:
 ### Admin
 1. Admin Can Login
