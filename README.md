@@ -66,8 +66,8 @@ the page.
 *Use Case Diagram*
 <br>
 
-##Screen Shots
-###Customer
+## Screen Shots
+### Customer
 ![log](https://user-images.githubusercontent.com/38730778/212703316-c140da99-981e-427b-9477-fe4f061bf084.png)
 *Login For Customer*
 <br>
@@ -92,7 +92,7 @@ the page.
 ![all order](https://user-images.githubusercontent.com/38730778/212703327-e8beb5a3-d7f2-4ed9-b2da-a629814c8669.png)
 *Customer Profile*
 
-###Admin
+### Admin
 
 ![login admin](https://user-images.githubusercontent.com/38730778/212703330-5de29026-2d09-4eb4-8e74-9d69d4952c3f.png)
 *Login For Admin*
