@@ -26,6 +26,10 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `admin`
 --
+drop database cse411project;
+
+create database  cse411project;
+use cse411project;
 
 CREATE TABLE `admin` (
   `id` int(100) NOT NULL,
@@ -77,6 +81,7 @@ CREATE TABLE `orders` (
   `name` varchar(100) NOT NULL,
   `address` varchar(100) NOT NULL,
   `phone` int(100) NOT NULL,
+  `dir` VARCHAR(200),
   `mobnumber` int(100) NOT NULL,
   `txid` varchar(100) NOT NULL,
   `totalproduct` varchar(100) NOT NULL,
@@ -128,7 +133,7 @@ CREATE TABLE `users` (
   `f_name` varchar(100) NOT NULL,
   `l_name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `pass` int(100) NOT NULL
+  `pass` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -136,10 +141,19 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `f_name`, `l_name`, `email`, `pass`) VALUES
-(1, 'Ami', 'vai', 'anik@gmail.com', 81),
-(2, 'Ami', 'vai', 'anik98bc@gmail.com', 9),
-(3, 'ashiqur', 'anik', 'ashiqur.anik25@gmail.com', 9),
-(4, 'arif', 'vai', 'arif@gmail.com', 81);
+(1, 'Ami', 'vai', 'anik@gmail.com', md5(81)),
+(2, 'Ami', 'vai', 'anik98bc@gmail.com', md5(9)),
+(3, 'ashiqur', 'anik', 'ashiqur.anik25@gmail.com', md5(9)),
+(4, 'arif', 'vai', 'arif@gmail.com', md5(81));
+
+
+CREATE TABLE `message` (
+  `id` int(100) NOT NULL AUTO_INCREMENT PRIMARY Key,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `assunto` varchar(100) NOT NULL,
+  `sms` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
