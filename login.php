@@ -1,6 +1,7 @@
 <?php 
 
 SESSION_START();
+$mensagem = '';
 
 if(isset($_SESSION['auth']))
 {
@@ -20,7 +21,6 @@ include "lib/connection.php";
         $loginquery="SELECT * FROM users WHERE email='$email' AND pass='$pass'";
         $loginres = $conn->query($loginquery);
 
-        echo $loginres->num_rows;
 
         if ($loginres->num_rows > 0) 
         {
@@ -31,92 +31,99 @@ include "lib/connection.php";
                 $userid=$result['id'];
             }
 
-            $_SESSION['username']=$username;
-            $_SESSION['userid']=$userid;
-            $_SESSION['auth']=1;
+            $_SESSION['username'] = $username;
+            $_SESSION['userid'] = $userid;
+            $_SESSION['auth'] = 1;
             header("location:index.php");
         }
         else
         {
-            echo "invalid";
+            $mensagem = "Usuario Inexistente";
         }
     }
 
 
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+	<title>Loja Fashion - Login</title>
+	<meta charset="UTF-8">
+    <meta name="description" content="test">
+    <meta name="keywords" content="HTML, CSS, BOOTSTRAP">
+    <meta name="author" content="Osvaldo Victor">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <!--font-family: 'Raleway', sans-serif;-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>cse411</title>
-
+    <link rel="favicon" type="text/css" href="#favicon">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" href="Ionicons/css/ionicons.min.css">
 
 </head>
 
-<body class="bg-gradient-primary">
+<body>
 
-    <div class="container">
-
-        <!-- Outer Row -->
-      <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <div class="row justify-content-center">
-
-            <div class="col-xl-10 col-lg-12 col-md-9">
-
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                    </div>
-                                    <form class="user">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                name="email"
-                                                placeholder="Enter Email Address">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password" name="password">
-                                        </div>
-                                        <div class="form-group">
-                                            
-                                        </div>
-                                 
-                                            <input class="btn btn-primary btn-user btn-block" type="submit" name="submit" value="login">
-                                  
-                                        <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="register.php">Create an Account!</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+<section class="vh-100" style="  background-color: hsl(218, 41%, 15%);">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
             </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
 
+              <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                    <span class="h1 fw-bold mb-0">Loja Fashion</span>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Entrar em sua conta</h5>
+        <div class="bg-danger text text-center my-3"><?php echo $mensagem ?></div>
+                  <div class="form-outline mb-4">
+                    <input type="email" name="email" id="form2Example17" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example17">Endereço de E-mail</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" name="password" id="form2Example27" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example27">Senha</label>
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                    <button class="btn btn-dark btn-lg btn-block" type="submit" name="submit">Login</button>
+                  </div>
+
+                  <a class="small text-muted" href="#!">Esqueceu sua senha?</a>
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Não Tem uma conta? <a href="register.php"
+                      style="color: #393f81;">Registre-se aqui</a></p>
+                  <a href="#!" class="small text-muted">Termos de uso.</a>
+                  <a href="#!" class="small text-muted">Politicas de Privacidade</a>
+                </form>
+
+              </div>
+            </div>
+          </div>
         </div>
-
-      </form>
-
+      </div>
     </div>
+  </div>
+</section>
+
+
+
 
 
 </body>
-
 </html>

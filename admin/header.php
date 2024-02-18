@@ -3,6 +3,14 @@ include'lib/connection.php';
 $sql = "SELECT * FROM orders where status='pending'";
 $result = $conn -> query ($sql);
 
+$c=0;
+  if (mysqli_num_rows($result) > 0) {
+	// output data of each row
+	while($row = mysqli_fetch_assoc($result)) {
+		$c=$c+1;
+	}
+}
+	 
 ?>
 
 <!DOCTYPE html>
@@ -18,73 +26,61 @@ $result = $conn -> query ($sql);
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/media.css">
 </head>
 <body>
-	<section class="header" id="header">
-		<i class="fas fa-bars fixed" onclick="openside()"></i>
-		<div class="line-fixed">Admin Panel</div>
-		<?php
-		$c=0;
-          if (mysqli_num_rows($result) > 0) {
-            // output data of each row
-            while($row = mysqli_fetch_assoc($result)) {
-				$c=$c+1;
-			}
-		}
-              ?>
-		<span>(New Orders)</span>
-		<span style="    border-radius: 20px;
-    
-    background-color: red;
-    color: white;
-    padding: 5px;"><?php echo $c ;?></span>
-		<a href="logout.php">(logout)</a>
-	</section>
+      
+<nav class="navbar navbar-dark bg-dark mb-6">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.php">Painel de Administrador</a>
+    <button class="navbar-toggler" type="button" 
+	data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+ <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu do Admin</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.php">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pending_orders.php">Pedidos 
+		<span style="    
+    color: red;"><?php echo $c ;?></span>
+				</a>
+          </li>
+		   
+		  <li class="nav-item"> <a class="nav-link" href="message.php">Mensagens</a></li>
 
-	<div class="sidenav" id="sidenav">
-		<ul class="navbar-nav">
-		   <li class="nav-item">
-				<a class="nav-link d" href="Home.php">Dashboard</a>
-			</li>
-            <li class="nav-item">
-				<a class="nav-link po" href="pending_orders.php">Order Status</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link ap" href="add_product.php">Add Product</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link vp" href="all_product.php">All Product</a>
-			</li>
-			
-			<li class="nav-item">
-				<a class="nav-link ao" href="all_orders.php">Delivered Order</a>
-			</li>
-            <li class="nav-item">
-                <a class="nav-link u" href="users.php">Users</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Produtos
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="add_product.php">Adicionar Produto</a>
+              <li><a class="dropdown-item" href="all_product.php">Todos os Produtos</a>
+           
+            </ul>
+          </li>
+		  <li class="nav-item">
+                <a class="nav-link u" href="users.php">Usuarios</a>
+            </li>
+        <li class="nav-item">
+                <a class="nav-link u" href="report.php">Relatórios</a>
             </li>
 			<li class="nav-item">
-                <a class="nav-link u" href="report.php">Report</a>
+			<a class="nav-link u" href="logout.php">Sair</a>
             </li>
-		</ul>
-	</div>
-	<?php
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
 
-?>
-<!--js link-->
-<script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-      integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-      crossorigin="anonymous"
-    ></script>
-<script src="js/script.js"></script>
-<script src="https://kit.fontawesome.com/3b83a3096d.js" crossorigin="anonymous"></script>
 
-</body>
-</html>

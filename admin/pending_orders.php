@@ -1,10 +1,11 @@
 <?php
  include'header.php';
+ include'lib/connection.php';
  SESSION_START();
 
-if(isset($_SESSION['auth']))
+if(isset($_SESSION['autor']))
 {
-   if($_SESSION['auth']!=1)
+   if($_SESSION['autor']!=1)
    {
        header("location:login.php");
    }
@@ -13,7 +14,6 @@ else
 {
    header("location:login.php");
 }
-include'lib/connection.php';
 $sql = "SELECT * FROM orders";
 $result = $conn -> query ($sql);
 
@@ -32,32 +32,20 @@ if(isset($_GET['remove'])){
   header('location:pending_orders.php');
 };
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/pending_orders.css">
-
-</head>
-<body>
-
 <div class="container pendingbody">
-  <h5>Order Status</h5>
+  <h5>Estado do Pedido</h5>
 <table class="table">
   <thead>
     <tr>
 
-      <th scope="col">Name</th>
-      <th scope="col">Address</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Send Money Number</th>
+      <th scope="col">Nome</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Número de Transação </th>
       <th scope="col">Txid</th>
-      <th scope="col">Total Product</th>
-      <th scope="col">Total Price</th>
-      <th scope="col">Status</th>
+      <th scope="col">Total de Produtos</th>
+      <th scope="col">Total(KZ)</th>
+      <th scope="col">Estado</th>
     </tr>
   </thead>
   <tbody>
@@ -72,7 +60,18 @@ if(isset($_GET['remove'])){
       <td><?php echo $row["name"] ?></td>
       <td><?php echo $row["address"] ?></td>
       <td><?php echo $row["phone"] ?></td>
-      <td><?php echo $row["mobnumber"] ?></td>
+      <td>
+        <?php 
+        if($row["mobnumber"] != 0):
+          ?>
+  <a href="http://localhost/e-commerce/admin/<?php echo $row["dir"]; ?>">Ver Comprovativo</a>
+          <?php
+   else:
+    echo $row["mobnumber"];
+        endif;
+        ?>
+      
+      </td>
       <td><?php echo $row["txid"] ?></td>
       <td><?php echo $row["totalproduct"] ?></td>
       <td><?php echo $row["totalprice"] ?></td>
@@ -81,15 +80,15 @@ if(isset($_GET['remove'])){
         <div>
                                 <select name="update_status" class="form-control">
                                 <option><?php echo $row['status']; ?></option>
-                                    <option value="Pending">Pending</option>
-                                    <option value="Confirmed">Confirmed</option>
-                                  <option value="Cancel">Cancel</option>
-                                  <option value="Delivered">Delivered</option>
+                                    <option value="Pending">Pendente</option>
+                                    <option value="Confirmed">Confirmado</option>
+                                  <option value="Cancel">Cancelado</option>
+                                  <option value="Delivered">Entregue</option>
                                 </select>
                             </div>
-        <input type="submit" value="update" name="update_update_btn">
+        <input class="btn btn-sm btn-primary my-2" type="submit" value="update" name="update_update_btn">
       </form></td>
-      <td><a href="pending_orders.php?remove=<?php echo $row['id']; ?>">remove</a></td>
+      <td><a class="btn btn-sm btn-danger" href="pending_orders.php?remove=<?php echo $row['id']; ?>">remove</a></td>
     </tr>
     <?php 
     }
@@ -102,5 +101,6 @@ if(isset($_GET['remove'])){
 </table>
 </div>
     
-</body>
-</html>
+<?php
+include_once 'footer.php'
+?>

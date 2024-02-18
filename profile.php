@@ -15,7 +15,7 @@ else
 }
 include'lib/connection.php';
 $k=$_SESSION['userid'];
-$sql = "SELECT * FROM orders where userid='$k'";
+$sql = "SELECT * FROM orders where userid='$k' ";
 $result = $conn -> query ($sql);
 ?>
 <!DOCTYPE html>
@@ -24,26 +24,27 @@ $result = $conn -> query ($sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="css/pending_orders.css">
 
 </head>
 <body>
 
 <div class="container pendingbody">
-  <h5>All Orders</h5>
+  <h5>Todos os Pedidos</h5>
 <table class="table">
   <thead>
     <tr>
 
-      <th scope="col">Name</th>
-      <th scope="col">Address</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Send Money Number</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Endereço</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Número de Envio</th>
       <th scope="col">Txid</th>
-      <th scope="col">Total Product</th>
-      <th scope="col">Total Price</th>
-      <th scope="col">Status</th>
+      <th scope="col">Total de Produtos</th>
+      <th scope="col">Total de Preço </th>
+      <th scope="col">Estado</th>
+      <th scope="col">Opções</th>
     </tr>
   </thead>
   <tbody>
@@ -52,7 +53,7 @@ $result = $conn -> query ($sql);
           if (mysqli_num_rows($result) > 0) {
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
-              /*if($row["status"]==0)
+          if($row["status"]==0)
               {
                 $k="pending";
               }
@@ -67,7 +68,7 @@ $result = $conn -> query ($sql);
               if($row["status"]==3)
               {
                 $k="delivered";
-              }*/
+              }
               ?>
     <tr>
 
@@ -79,6 +80,12 @@ $result = $conn -> query ($sql);
       <td><?php echo $row["totalproduct"] ?></td>
       <td><?php echo $row["totalprice"] ?></td>
       <td><?php echo $row["status"] ?></td>
+      <td> 
+        <form action="pdfcmprovante.php" method="post">
+  <input name="id" type="hidden" value="<?php  echo $row["id"];  ?>">
+     <button type="submit" class="btn btn-sm btn-secondary" name="comprovante">Obter Comprovativo</button>
+     </form>
+    </td>
     </tr>
     <?php 
     }
