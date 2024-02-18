@@ -1,9 +1,9 @@
 <?php
 SESSION_START();
 
-if(isset($_SESSION['auth']))
+if(isset($_SESSION['autor']))
 {
-   if($_SESSION['auth']!=1)
+   if($_SESSION['autor']!=1)
    {
        header("location:login.php");
    }
@@ -36,30 +36,20 @@ else
   header('location:all_product.php');
 };
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/pending_orders.css">
 
-</head>
-<body>
 
 <div class="container pendingbody">
-  <h5>All Product</h5>
+  <h5>Todos os Produtos</h5>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Image</th>
-      <th scope="col">Name</th>
-      <th scope="col">Catagory</th>
+      <th scope="col">Imagem</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Categoria</th>
 
-      <th scope="col">Quantity</th>
-      <th scope="col">Price</th>
-      <th scope="col">Action</th>
+      <th scope="col">Quantidade</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Acção</th>
     </tr>
   </thead>
   <tbody>
@@ -77,9 +67,9 @@ else
 
         <td><input type="number" name="update_quantity"  value="<?php echo $row['quantity']; ?>" ></td>
         <td> <input type="number" name="update_Price" value="<?php echo $row['Price']; ?>" ></td>
-        <td> <input type="submit" value="update" name="update_update_btn">
+        <td> <input type="submit" class="btn btn-sm btn-primary" value="update" name="update_update_btn">
       </form></td>
-      <td><a href="all_product.php?remove=<?php echo $row['id']; ?>">remove</a></td>
+      <td><a class="btn btn-sm btn-danger" href="all_product.php?remove=<?php echo $row['id']; ?>">remove</a></td>
     </tr>
     <?php 
     }
@@ -94,5 +84,6 @@ else
 
 </div>
     
-</body>
-</html>
+<?php
+include_once 'footer.php'
+?>

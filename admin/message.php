@@ -14,24 +14,20 @@ else
    header("location:login.php");
 }
 include'lib/connection.php';
-$sql = "SELECT * FROM orders where status='delivered'";
+$sql = "SELECT * FROM message";
 $result = $conn -> query ($sql);
 ?>
 
 <div class="container pendingbody">
-  <h5>Todos os Pedidos</h5>
+  <h5>Mensagens</h5>
 <table class="table">
   <thead>
     <tr>
 
       <th scope="col">Nome</th>
-      <th scope="col">Endereço</th>
-      <th scope="col">Telfone</th>
-      <th scope="col">Send Money Number</th>
-      <th scope="col">Txid</th>
-      <th scope="col">Total de Produtos</th>
-      <th scope="col">Total (kz)</th>
-      <th scope="col">Estado</th>
+      <th scope="col">Email</th>
+      <th scope="col">Assunto</th>
+      <th scope="col">Mensagem</th>
     </tr>
   </thead>
   <tbody>
@@ -43,13 +39,9 @@ $result = $conn -> query ($sql);
     <tr>
 
       <td><?php echo $row["name"] ?></td>
-      <td><?php echo $row["address"] ?></td>
-      <td><?php echo $row["phone"] ?></td>
-      <td><?php echo $row["mobnumber"] ?></td>
-      <td><?php echo $row["txid"] ?></td>
-      <td><?php echo $row["totalproduct"] ?></td>
-      <td><?php echo $row["totalprice"] ?></td>
-      <td><?php echo $row["status"] ?></td>
+      <td><?php echo $row["email"] ?></td>
+      <td><?php echo $row["assunto"] ?></td>
+      <td><?php echo $row["sms"] ?></td>
     </tr>
     <?php 
     }
@@ -60,7 +52,7 @@ $result = $conn -> query ($sql);
   </tbody>
 </table>
 </div>
-
+    
 <?php
 include_once 'footer.php'
 ?>

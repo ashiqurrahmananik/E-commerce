@@ -2,8 +2,9 @@
 
 SESSION_START();
 
-if(isset($_SESSION['auth']))
+if(isset($_SESSION['autor']))
 {
+	session_unset();
 	session_destroy();
 	header("location:login.php");
 }

@@ -2,9 +2,9 @@
  include'header.php';
  SESSION_START();
 
-if(isset($_SESSION['auth']))
+if(isset($_SESSION['autor']))
 {
-   if($_SESSION['auth']!=1)
+   if($_SESSION['autor']!=1)
    {
        header("location:login.php");
    }
@@ -25,27 +25,27 @@ $result = $conn -> query ($sql);
 ?>
 <div class="container">
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-  <label for="starttime">Start (date and time):</label>
+  <label for="starttime">Inicio (Data e Hora):</label>
   <input type="datetime-local" id="starttime" name="starttime">
 
-  <label for="endtime"> End (date and time):</label>
+  <label for="endtime"> Fim (Data e Hora):</label>
   <input type="datetime-local" id="endtime" name="endtime">
   <input type="submit" name="submit">
 </form>
 <div class="container pendingbody">
-  <h5>All Orders</h5>
+  <h5>Todos os Pedidos</h5>
 <table class="table">
   <thead>
     <tr>
 
-      <th scope="col">Name</th>
-      <th scope="col">Address</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Send Money Number</th>
+      <th scope="col">Nome</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Número de Transação </th>
       <th scope="col">Txid</th>
-      <th scope="col">Total Product</th>
-      <th scope="col">Total Price</th>
-      <th scope="col">Status</th>
+      <th scope="col">Total de Produtos</th>
+      <th scope="col">Total(KZ)</th>
+      <th scope="col">Estado</th>
     </tr>
   </thead>
   <tbody>
@@ -81,6 +81,9 @@ $result = $conn -> query ($sql);
         ?>
   </tbody>
 </table>
-<?php echo "Total= " . $t ." Taka";?>
+<?php echo "Total= " . $t ." kz";?>
 
 </div>
+<?php
+include_once 'footer.php'
+?>
